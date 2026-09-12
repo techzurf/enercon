@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Sun } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 const NAV_LINKS = [
@@ -33,14 +33,12 @@ export function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 bg-enercon-green rounded-full flex items-center justify-center text-white shrink-0 group-hover:scale-105 transition-transform">
-            <Sun size={24} />
-          </div>
-          <div className="flex flex-col">
-            <span className={`text-xl font-bold leading-none tracking-tight ${isScrolled ? 'text-enercon-darker' : 'text-white'}`}>ENERCON</span>
-            <span className={`text-xs font-medium tracking-widest ${isScrolled ? 'text-enercon-green' : 'text-white/90'}`}>SOLAR</span>
-          </div>
+        <a href="#home" className="flex items-center group">
+          <img 
+            src="https://res.cloudinary.com/dv16a8l1l/image/upload/v1789193241/enercon_header_logo_v4_qygdvi.png"
+            alt="Enercon Solar"
+            className="h-10 md:h-12 w-auto object-contain group-hover:scale-105 transition-transform"
+          />
         </a>
 
         {/* Desktop Nav */}
@@ -88,14 +86,12 @@ export function Header() {
           >
             <div className="flex flex-col h-full p-6">
               <div className="flex items-center justify-between mb-12">
-                <a href="#home" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
-                  <div className="w-10 h-10 bg-enercon-green rounded-full flex items-center justify-center text-white shrink-0">
-                    <Sun size={24} />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-xl font-bold leading-none tracking-tight text-enercon-darker">ENERCON</span>
-                    <span className="text-xs font-medium tracking-widest text-enercon-green">SOLAR</span>
-                  </div>
+                <a href="#home" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
+                  <img 
+                    src="https://res.cloudinary.com/dv16a8l1l/image/upload/v1789193241/enercon_header_logo_v4_qygdvi.png"
+                    alt="Enercon Solar"
+                    className="h-10 w-auto object-contain"
+                  />
                 </a>
                 <button
                   onClick={() => setMobileMenuOpen(false)}

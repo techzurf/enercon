@@ -46,7 +46,7 @@ export function WhyChooseUs() {
               </h2>
             </motion.div>
 
-            <div className="space-y-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-8 lg:grid-cols-1 lg:space-y-8">
               {REASONS.map((reason, index) => (
                 <motion.div 
                   key={reason.title}
@@ -54,14 +54,14 @@ export function WhyChooseUs() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="flex gap-6 items-start"
+                  className="flex flex-col lg:flex-row gap-4 lg:gap-6 items-start bg-slate-50 lg:bg-transparent p-6 lg:p-0 rounded-2xl lg:rounded-none border border-slate-100 lg:border-none shadow-sm lg:shadow-none"
                 >
-                  <div className="w-14 h-14 rounded-full bg-enercon-green-light flex items-center justify-center shrink-0 text-enercon-green">
-                    <reason.icon size={24} />
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-enercon-green-light flex items-center justify-center shrink-0 text-enercon-green">
+                    <reason.icon size={20} className="lg:w-6 lg:h-6" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-enercon-darker mb-2">{reason.title}</h3>
-                    <p className="text-slate-600 leading-relaxed">{reason.desc}</p>
+                    <h3 className="text-lg lg:text-xl font-bold text-enercon-darker mb-2">{reason.title}</h3>
+                    <p className="text-slate-600 text-sm lg:text-base leading-relaxed">{reason.desc}</p>
                   </div>
                 </motion.div>
               ))}

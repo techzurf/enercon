@@ -1,6 +1,6 @@
+import { Preloader } from './components/Preloader';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { VideoSection } from './components/VideoSection';
 import { About } from './components/About';
 import { Services } from './components/Services';
 import { Projects } from './components/Projects';
@@ -15,10 +15,10 @@ import { MobileBottomNav } from './components/MobileBottomNav';
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col font-sans">
+      <Preloader />
       <Header />
       <main className="flex-grow">
         <Hero />
-        <VideoSection />
         <About />
         <Services />
         <Projects />

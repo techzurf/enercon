@@ -1,5 +1,8 @@
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
+import offGridImg from '../assets/images/regenerated_image_1789194237256.png';
+import allInOneImg from '../assets/images/regenerated_image_1789195702090.png';
+import pureSineImg from '../assets/images/regenerated_image_1789195815422.png';
 
 const PRODUCTS = [
   {
@@ -8,11 +11,11 @@ const PRODUCTS = [
   },
   {
     title: "Pure Sine Wave Inverters",
-    img: "https://images.unsplash.com/photo-1620283085439-39620a1e21c4?auto=format&fit=crop&q=80&w=800",
+    img: pureSineImg,
   },
   {
     title: "Off-Grid Hybrid Inverters",
-    img: "https://images.unsplash.com/photo-1620283085068-5aab14e823c9?auto=format&fit=crop&q=80&w=800",
+    img: offGridImg,
   },
   {
     title: "Lithium Energy Storage Batteries",
@@ -20,7 +23,7 @@ const PRODUCTS = [
   },
   {
     title: "All-in-One Energy Storage",
-    img: "https://images.unsplash.com/photo-1620283085133-2895690b2984?auto=format&fit=crop&q=80&w=800",
+    img: allInOneImg,
   }
 ];
 
@@ -45,7 +48,7 @@ export function Products() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 pb-8 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory hide-scrollbar">
           {PRODUCTS.map((product, index) => (
             <motion.div
               key={product.title}
@@ -53,7 +56,7 @@ export function Products() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col"
+              className="shrink-0 w-[75vw] md:w-auto snap-center group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col"
             >
               <div className="aspect-square bg-slate-100 p-6 flex items-center justify-center overflow-hidden">
                 {/* Product images are often on white/transparent backgrounds. We use a subtle blend. */}

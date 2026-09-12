@@ -14,13 +14,17 @@ export function About() {
             className="relative"
           >
             <div className="aspect-[4/5] rounded-2xl overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1588508065123-287b28e0141c?auto=format&fit=crop&q=80&w=1200" 
-                alt="Solar Panel Installation" 
+              <motion.img 
+                initial={{ scale: 1.1 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
+                src="https://res.cloudinary.com/dv16a8l1l/image/upload/v1789192114/about-solar_eisi5s.jpg" 
+                alt="Enercon Solar Project" 
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute -bottom-8 -right-8 bg-white p-8 rounded-2xl shadow-xl max-w-xs hidden md:block">
+            <div className="md:absolute md:-bottom-8 md:-right-8 bg-white p-6 md:p-8 rounded-2xl shadow-xl md:max-w-xs mt-[-30px] md:mt-0 relative z-10 mx-6 md:mx-0">
               <div className="text-4xl font-serif font-bold text-enercon-green mb-2">10+</div>
               <div className="text-slate-600 font-medium">Years of Excellence in Renewable Energy Solutions</div>
             </div>

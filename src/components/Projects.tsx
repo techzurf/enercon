@@ -8,7 +8,7 @@ const PROJECTS = [
     category: "Commercial Solar PV",
     location: "UAE",
     desc: "Large-scale rooftop solar installation powering manufacturing operations.",
-    img: "https://images.unsplash.com/photo-1592833159057-6adebedad480?auto=format&fit=crop&q=80&w=1200"
+    img: "https://res.cloudinary.com/dv16a8l1l/image/upload/v1789192489/ChatGPT_Image_Sep_12_2026_11_24_38_AM_a7rdau.png"
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const PROJECTS = [
     category: "Solar Carport",
     location: "Dubai, UAE",
     desc: "Integrated solar car parking shades providing clean energy and vehicle protection.",
-    img: "https://images.unsplash.com/photo-1545229765-65481734533a?auto=format&fit=crop&q=80&w=1200"
+    img: "https://res.cloudinary.com/dv16a8l1l/image/upload/v1789192718/ChatGPT_Image_Sep_12_2026_11_28_29_AM_mt2rdh.png"
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const PROJECTS = [
     category: "O&M Service",
     location: "Various Locations",
     desc: "Comprehensive cleaning and maintenance ensuring maximum solar yield.",
-    img: "https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&q=80&w=1200"
+    img: "https://res.cloudinary.com/dv16a8l1l/image/upload/v1789193142/ChatGPT_Image_Sep_12_2026_11_35_33_AM_bv72sg.png"
   },
   {
     id: 4,
@@ -74,7 +74,7 @@ export function Projects() {
           </motion.a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex overflow-x-auto lg:grid lg:grid-cols-3 gap-6 lg:gap-8 pb-8 -mx-6 px-6 lg:mx-0 lg:px-0 snap-x snap-mandatory hide-scrollbar">
           {PROJECTS.slice(0, 3).map((project, index) => (
             <motion.div
               key={project.id}
@@ -82,7 +82,7 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group cursor-pointer"
+              className="shrink-0 w-[85vw] lg:w-auto snap-center group cursor-pointer bg-slate-800/20 lg:bg-transparent rounded-2xl lg:rounded-none p-4 lg:p-0 border border-slate-700/50 lg:border-none"
             >
               <div className="relative overflow-hidden rounded-xl aspect-[4/3] mb-6">
                 <div className="absolute inset-0 bg-enercon-dark/40 z-10 group-hover:bg-transparent transition-colors duration-500"></div>

@@ -63,7 +63,7 @@ export function Services() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-8 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory hide-scrollbar">
           {SERVICES.map((service, index) => (
             <motion.div
               key={service.num}
@@ -71,7 +71,7 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group flex flex-col bg-slate-50 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300"
+              className="shrink-0 w-[85vw] md:w-auto snap-center group flex flex-col bg-slate-50 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-slate-200/60 shadow-sm"
             >
               <div className="h-48 overflow-hidden relative">
                 <div className="absolute inset-0 bg-enercon-dark/20 z-10 group-hover:bg-transparent transition-colors duration-300"></div>

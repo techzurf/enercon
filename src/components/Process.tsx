@@ -50,9 +50,9 @@ export function Process() {
         </div>
 
         {/* Mobile Vertical Process */}
-        <div className="lg:hidden flex flex-col gap-8 relative pl-8">
+        <div className="lg:hidden flex flex-col gap-4 relative pl-10 pr-2">
            {/* Connecting Line */}
-           <div className="absolute top-4 bottom-4 left-[2.25rem] w-px bg-white/30 -z-0"></div>
+           <div className="absolute top-4 bottom-4 left-[2.25rem] w-[2px] bg-white/20 -z-0"></div>
 
           {STEPS.map((step, index) => (
             <motion.div
@@ -61,12 +61,12 @@ export function Process() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="flex items-center gap-6 relative z-10"
+              className="flex items-center gap-4 relative z-10 bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/20 shadow-sm"
             >
-              <div className="w-12 h-12 shrink-0 rounded-full bg-white text-enercon-green flex items-center justify-center font-bold text-lg shadow-xl">
+              <div className="w-10 h-10 shrink-0 rounded-full bg-white text-enercon-green flex items-center justify-center font-bold text-base shadow-lg absolute -left-5">
                 {step.num}
               </div>
-              <h3 className="font-bold text-xl">
+              <h3 className="font-bold text-lg pl-6">
                 {step.title}
               </h3>
             </motion.div>
