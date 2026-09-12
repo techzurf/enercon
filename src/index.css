@@ -908,3 +908,32 @@
     animation: none !important;
   }
 }
+
+.clients-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+
+.clients-marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 70px;
+  animation: clients-scroll 28s linear infinite;
+}
+
+.clients-marquee:hover .clients-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes clients-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}

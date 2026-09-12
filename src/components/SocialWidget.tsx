@@ -17,7 +17,7 @@ const SOCIAL_LINKS = [
 
 export function SocialWidget() {
   return (
-    <div className="fixed right-2 top-1/2 -translate-y-1/2 z-[90] flex flex-col pointer-events-none sm:right-4 lg:right-6">
+    <div className="fixed right-2 top-1/2 -translate-y-1/2 z-40 flex flex-col pointer-events-none sm:right-4 lg:right-6">
       <div className="social-widget-card pointer-events-auto scale-[0.7] sm:scale-[0.85] lg:scale-100 origin-right">
         <ul>
           {SOCIAL_LINKS.map((social) => {

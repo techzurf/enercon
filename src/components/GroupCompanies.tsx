@@ -7,9 +7,13 @@ const COMPANIES = [
   "Sahaal Power & Projects Pvt Ltd"
 ];
 
+// Duplicate items to ensure the marquee has enough content to scroll seamlessly
+const MARQUEE_ITEMS = [...COMPANIES, ...COMPANIES, ...COMPANIES, ...COMPANIES];
+const ALL_ITEMS = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS]; // 2 halves for -50% translation
+
 export function GroupCompanies() {
   return (
-    <section className="py-20 bg-slate-900 border-t border-slate-800">
+    <section className="py-20 bg-slate-900 border-t border-slate-800 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -23,20 +27,18 @@ export function GroupCompanies() {
             ENERCON GROUP
           </h2>
         </motion.div>
+      </div>
 
-        <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 flex-wrap">
-          {COMPANIES.map((company, index) => (
-            <motion.div
-              key={company}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+      <div className="clients-marquee">
+        <div className="clients-marquee-track">
+          {ALL_ITEMS.map((company, index) => (
+            <div
+              key={`${company}-${index}`}
               className="flex items-center gap-3 text-slate-300 hover:text-enercon-green transition-colors"
             >
-              <Building2 size={20} className="text-slate-500" />
-              <span className="font-medium text-lg">{company}</span>
-            </motion.div>
+              <Building2 size={20} className="text-slate-500 shrink-0" />
+              <span className="font-medium text-lg whitespace-nowrap">{company}</span>
+            </div>
           ))}
         </div>
       </div>

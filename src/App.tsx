@@ -16,7 +16,7 @@ import { SocialWidget } from './components/SocialWidget';
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col font-sans pb-[calc(72px+env(safe-area-inset-bottom))] lg:pb-0">
+    <div className="min-h-screen flex flex-col font-sans overflow-x-hidden">
       <CustomCursor />
       <Preloader />
       <SocialWidget />
@@ -27,8 +27,8 @@ export default function App() {
         <Services />
         <Projects />
         <Products />
-        <WhyChooseUs />
         <GroupCompanies />
+        <WhyChooseUs />
         <Process />
         <CTASection />
       </main>

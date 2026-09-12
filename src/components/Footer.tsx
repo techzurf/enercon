@@ -3,8 +3,8 @@ import { motion } from 'motion/react';
 
 export function Footer() {
   return (
-    <footer id="contact" className="bg-slate-900 text-slate-300 pt-24 pb-32 lg:pb-12 border-t border-slate-800">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <footer id="contact" className="bg-slate-900 text-slate-300 pt-24 pb-[calc(1.5rem+72px+env(safe-area-inset-bottom))] lg:pb-12 border-t border-slate-800">
+      <div className="max-w-7xl mx-auto px-6 pr-12 sm:pr-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           
           <div className="lg:col-span-1">

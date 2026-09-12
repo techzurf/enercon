@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'motion/react';
 import { Leaf, ShieldCheck, Users, Target } from 'lucide-react';
 
@@ -33,7 +34,7 @@ const REASONS = [
 
 export function WhyChooseUs() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section id="solutions" className="py-24 bg-white relative overflow-hidden">
       {/* Subtle decorative background element */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-50/50 rounded-bl-[100px] -z-10 hidden lg:block"></div>
       
