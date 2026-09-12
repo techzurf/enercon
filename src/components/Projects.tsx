@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { ArrowRight, MapPin } from 'lucide-react';
+import dubaiAirportImg from '../assets/images/regenerated_image_1789197625735.png';
 
 const PROJECTS = [
   {
@@ -16,7 +17,7 @@ const PROJECTS = [
     category: "Solar Carport",
     location: "Dubai, UAE",
     desc: "Integrated solar car parking shades providing clean energy and vehicle protection.",
-    img: "https://res.cloudinary.com/dv16a8l1l/image/upload/v1789192718/ChatGPT_Image_Sep_12_2026_11_28_29_AM_mt2rdh.png"
+    img: dubaiAirportImg
   },
   {
     id: 3,

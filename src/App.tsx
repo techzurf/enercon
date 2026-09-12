@@ -14,7 +14,7 @@ import { MobileBottomNav } from './components/MobileBottomNav';
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col font-sans">
+    <div className="min-h-screen flex flex-col font-sans pb-[calc(72px+env(safe-area-inset-bottom))] lg:pb-0">
       <Preloader />
       <Header />
       <main className="flex-grow">
