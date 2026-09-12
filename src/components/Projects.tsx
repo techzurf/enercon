@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { ArrowRight, MapPin } from 'lucide-react';
-import dubaiAirportImg from '../assets/images/regenerated_image_1789197625735.png';
+import dubaiAirportImg from '../assets/images/regenerated_image_1789198223274.png';
 
 const PROJECTS = [
   {
@@ -166,7 +166,7 @@ export function Projects() {
                     <MapPin size={16} className="text-enercon-green" />
                     {project.location}
                 </div>
-                <a href="#" className="inline-flex items-center gap-2 text-white font-semibold text-sm group/link">
+                <a href="#" className="inline-flex items-center gap-2 text-white font-semibold text-sm group/link btn-glitch" data-text="View Project">
                   View Project
                   <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
                 </a>

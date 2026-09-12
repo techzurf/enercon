@@ -1,4 +1,5 @@
 import { Preloader } from './components/Preloader';
+import { CustomCursor } from './components/CustomCursor';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -11,11 +12,14 @@ import { Process } from './components/Process';
 import { CTASection } from './components/CTASection';
 import { Footer } from './components/Footer';
 import { MobileBottomNav } from './components/MobileBottomNav';
+import { SocialWidget } from './components/SocialWidget';
 
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col font-sans pb-[calc(72px+env(safe-area-inset-bottom))] lg:pb-0">
+      <CustomCursor />
       <Preloader />
+      <SocialWidget />
       <Header />
       <main className="flex-grow">
         <Hero />

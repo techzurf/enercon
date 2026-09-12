@@ -22,13 +22,15 @@ export function CTASection() {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a 
               href="#contact" 
-              className="bg-enercon-darker hover:bg-black text-white px-8 py-4 rounded-full text-sm font-semibold transition-colors"
+              className="bg-enercon-darker hover:bg-black text-white px-8 py-4 rounded-full text-sm font-semibold transition-colors btn-glitch"
+              data-text="CONTACT US"
             >
               CONTACT US
             </a>
             <a 
               href="#contact" 
-              className="bg-enercon-green hover:bg-enercon-green-dark text-white px-8 py-4 rounded-full text-sm font-semibold transition-colors shadow-lg shadow-enercon-green/20"
+              className="bg-enercon-green hover:bg-enercon-green-dark text-white px-8 py-4 rounded-full text-sm font-semibold transition-colors shadow-lg shadow-enercon-green/20 btn-glitch"
+              data-text="GET A QUOTE"
             >
               GET A QUOTE
             </a>

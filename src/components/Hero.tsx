@@ -74,14 +74,16 @@ export function Hero() {
           >
             <a 
               href="#projects" 
-              className="group flex items-center justify-center gap-2 bg-enercon-green hover:bg-enercon-green-dark text-white px-8 py-4 rounded-full text-sm font-semibold transition-all shadow-lg shadow-enercon-green/20"
+              className="group flex items-center justify-center gap-2 bg-enercon-green hover:bg-enercon-green-dark text-white px-8 py-4 rounded-full text-sm font-semibold transition-all shadow-lg shadow-enercon-green/20 btn-glitch"
+              data-text="EXPLORE OUR PROJECTS"
             >
               EXPLORE OUR PROJECTS
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a 
               href="#contact" 
-              className="flex items-center justify-center bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full text-sm font-semibold transition-all"
+              className="flex items-center justify-center bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full text-sm font-semibold transition-all btn-glitch"
+              data-text="GET A QUOTE"
             >
               GET A QUOTE
             </a>

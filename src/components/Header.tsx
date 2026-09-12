@@ -59,7 +59,8 @@ export function Header() {
         <div className="hidden lg:block">
           <a
             href="#contact"
-            className="bg-enercon-green hover:bg-enercon-green-dark text-white px-6 py-3 rounded-full text-sm font-semibold transition-colors shadow-lg shadow-enercon-green/20"
+            className="bg-enercon-green hover:bg-enercon-green-dark text-white px-6 py-3 rounded-full text-sm font-semibold transition-colors shadow-lg shadow-enercon-green/20 btn-glitch"
+            data-text="GET A QUOTE"
           >
             GET A QUOTE
           </a>
@@ -118,7 +119,8 @@ export function Header() {
                 <a
                   href="#contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full block text-center bg-enercon-green hover:bg-enercon-green-dark text-white px-6 py-4 rounded-full text-lg font-semibold transition-colors"
+                  className="w-full block text-center bg-enercon-green hover:bg-enercon-green-dark text-white px-6 py-4 rounded-full text-lg font-semibold transition-colors btn-glitch"
+                  data-text="GET A QUOTE"
                 >
                   GET A QUOTE
                 </a>
