@@ -57,12 +57,15 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <a
-            href="#contact"
-            className="bg-enercon-green hover:bg-enercon-green-dark text-white px-6 py-3 rounded-full text-sm font-semibold transition-colors shadow-lg shadow-enercon-green/20 btn-glitch"
-            data-text="GET A QUOTE"
-          >
-            GET A QUOTE
+          <a href="#contact" className="enercon-star-btn desktop-star-btn">
+            <div className="container-stars">
+              <div className="stars"></div>
+            </div>
+            <div className="glow">
+              <div className="circle"></div>
+              <div className="circle"></div>
+            </div>
+            <span className="btn-text text-sm">GET A QUOTE</span>
           </a>
         </div>
 
@@ -119,10 +122,16 @@ export function Header() {
                 <a
                   href="#contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full block text-center bg-enercon-green hover:bg-enercon-green-dark text-white px-6 py-4 rounded-full text-lg font-semibold transition-colors btn-glitch"
-                  data-text="GET A QUOTE"
+                  className="enercon-star-btn mobile-star-btn"
                 >
-                  GET A QUOTE
+                  <div className="container-stars">
+                    <div className="stars"></div>
+                  </div>
+                  <div className="glow">
+                    <div className="circle"></div>
+                    <div className="circle"></div>
+                  </div>
+                  <span className="btn-text text-lg">GET A QUOTE</span>
                 </a>
               </div>
             </div>

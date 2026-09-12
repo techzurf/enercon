@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { ArrowRight, MapPin } from 'lucide-react';
-import dubaiAirportImg from '../assets/images/regenerated_image_1789203958673.png';
+import dubaiAirportImg from '../assets/images/regenerated_image_1789214303370.png';
 
 const PROJECTS = [
   {
@@ -41,7 +41,7 @@ const PROJECTS = [
     category: "Commercial Off-Grid",
     location: "UAE",
     desc: "Complete energy independence for F&B operations with battery storage.",
-    img: "https://images.unsplash.com/photo-1559302504-64aae6ca6b6f?auto=format&fit=crop&q=80&w=1200"
+    img: "https://res.cloudinary.com/dv16a8l1l/image/upload/v1789214551/ChatGPT_Image_Sep_12_2026_05_31_37_PM_hcu41v.png"
   }
 ];
 

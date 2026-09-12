@@ -316,3 +316,595 @@
     color: #0B315B;
   }
 }
+
+/* 3D Flip Card - Products */
+.product-flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 370px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.product-flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+/* Desktop hover flip */
+@media (hover: hover) and (pointer: fine) {
+  .product-flip-card:hover .product-flip-card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+.product-flip-card-front,
+.product-flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* FRONT */
+.product-flip-card-front {
+  background: #ffffff;
+  border: 1px solid rgba(10, 52, 95, 0.10);
+  box-shadow: 0 8px 25px rgba(10, 52, 95, 0.08);
+  transform: rotateY(0deg);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+/* Subtle lift before flip */
+.product-flip-card:hover .product-flip-card-front {
+  box-shadow: 0 18px 40px rgba(10, 52, 95, 0.16);
+}
+
+/* BACK */
+.product-flip-card-back {
+  background: linear-gradient(145deg, #062B55 0%, #083362 65%, #0A3B68 100%);
+  color: #ffffff;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px;
+  border: 1px solid rgba(168, 201, 0, 0.35);
+  box-shadow: 0 18px 40px rgba(10, 52, 95, 0.20);
+  position: absolute;
+}
+
+/* Enercon green accent */
+.product-flip-card-back::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: #A8C900;
+}
+
+/* BACK PRODUCT TITLE */
+.product-flip-card-back h3 {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+}
+
+/* BACK DESCRIPTION */
+.product-flip-card-back p {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0 0 18px 0;
+}
+
+/* BENEFIT TEXT */
+.product-flip-card-back .product-benefit {
+  color: #A8C900;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 22px;
+}
+
+/* CTA */
+.product-flip-card-back .product-details-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 11px 18px;
+  border-radius: 999px;
+  background: #A8C900;
+  color: #062B55;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-flip-card-back .product-details-btn:hover {
+  background: #b8db00;
+  transform: translateX(4px);
+  box-shadow: 0 8px 20px rgba(168, 201, 0, 0.25);
+}
+
+/* FRONT IMAGE */
+.product-flip-card-front img {
+  width: 100%;
+  height: 215px;
+  object-fit: cover;
+  display: block;
+}
+
+/* FRONT CONTENT */
+.product-flip-card-front .product-card-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 22px;
+}
+
+/* FRONT PRODUCT TITLE */
+.product-flip-card-front h3 {
+  color: #062B55;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* FRONT ARROW */
+.product-flip-card-front .product-arrow {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f7e6;
+  color: #062B55;
+  flex-shrink: 0;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.product-flip-card:hover .product-arrow {
+  background: #A8C900;
+  color: #062B55;
+  transform: translateX(3px);
+}
+
+/* RESPONSIVE CSS */
+@media (max-width: 768px) {
+  .product-flip-card {
+    height: 360px;
+  }
+  .product-flip-card-back {
+    padding: 26px;
+  }
+  .product-flip-card-back h3 {
+    font-size: 20px;
+  }
+  .product-flip-card-back p {
+    font-size: 14px;
+  }
+}
+
+/* Touch/mobile devices */
+@media (hover: none) and (pointer: coarse) {
+  .product-flip-card:hover .product-flip-card-inner {
+    transform: none;
+  }
+  .product-flip-card.is-flipped .product-flip-card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .product-flip-card-inner {
+    transition: none !important;
+  }
+  .product-flip-card:hover .product-flip-card-inner {
+    transform: none !important;
+  }
+  .product-flip-card.is-flipped .product-flip-card-inner {
+    transform: rotateY(180deg) !important;
+  }
+}
+
+/* Chairman Profile Card */
+.chairman-card {
+  width: 100%;
+  max-width: 550px;
+  min-height: 320px;
+  background: var(--color-enercon-darker, #062B55);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  margin: 0;
+  box-shadow: 0 10px 30px rgba(6, 43, 85, 0.15);
+  border: none;
+  outline: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .chairman-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(6, 43, 85, 0.25);
+  }
+}
+
+.chairman-card:focus-visible {
+  outline: 2px solid var(--color-enercon-green);
+  outline-offset: 4px;
+}
+
+.chairman-border {
+  position: absolute;
+  inset: 0px;
+  border: 1px solid var(--color-enercon-green, #A8C900);
+  opacity: 0;
+  transform: rotate(5deg) scale(1.1);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+.chairman-card.is-open .chairman-border {
+  inset: 12px;
+  opacity: 0.5;
+  transform: rotate(0) scale(1);
+}
+
+.chairman-trail {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chairman-card.is-open .chairman-trail {
+  animation: chairman-trail-anim 1s ease-in-out forwards;
+}
+
+@keyframes chairman-trail-anim {
+  0% {
+    background: linear-gradient(90deg, rgba(168, 201, 0, 0) 90%, var(--color-enercon-green) 100%);
+    opacity: 0;
+  }
+  30% {
+    background: linear-gradient(90deg, rgba(168, 201, 0, 0) 70%, var(--color-enercon-green) 100%);
+    opacity: 1;
+  }
+  70% {
+    background: linear-gradient(90deg, rgba(168, 201, 0, 0) 70%, var(--color-enercon-green) 100%);
+    opacity: 1;
+  }
+  95% {
+    background: linear-gradient(90deg, rgba(168, 201, 0, 0) 90%, var(--color-enercon-green) 100%);
+    opacity: 0;
+  }
+}
+
+.chairman-content-front, .chairman-content-back {
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  padding: 2rem;
+}
+
+.chairman-content-front {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.chairman-content-back {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
+
+.chairman-card.is-open .chairman-content-front {
+  opacity: 0;
+  transform: scale(1.05);
+  pointer-events: none;
+}
+
+.chairman-card.is-open .chairman-content-back {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.chairman-bottom-text {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  font-size: 11px;
+  text-transform: uppercase;
+  padding: 0 12px;
+  color: var(--color-enercon-green);
+  background: var(--color-enercon-darker);
+  opacity: 0.7;
+  letter-spacing: 2px;
+  transition: all 0.5s ease-in-out;
+  white-space: nowrap;
+  font-weight: 600;
+  z-index: 10;
+}
+
+.chairman-card:hover .chairman-bottom-text,
+.chairman-card:focus-visible .chairman-bottom-text {
+  opacity: 1;
+}
+
+.chairman-card.is-open .chairman-bottom-text {
+  opacity: 1;
+  letter-spacing: 4px;
+}
+
+@media (max-width: 768px) {
+  .chairman-card {
+    min-height: 380px;
+  }
+  .chairman-content-front, .chairman-content-back {
+    padding: 1.5rem;
+  }
+  .chairman-bottom-text {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chairman-card,
+  .chairman-border,
+  .chairman-content-front,
+  .chairman-content-back,
+  .chairman-bottom-text {
+    transition: none !important;
+  }
+  .chairman-trail {
+    animation: none !important;
+    display: none !important;
+  }
+}
+
+
+/* StealthWorm Enercon Star Button */
+.enercon-star-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 9999px; /* pill shape */
+  transition: transform 0.3s ease, background 0.3s ease;
+  border: 2px solid transparent; /* reserved for active state */
+  background-color: var(--color-enercon-green, #A8C900);
+  background-image: none;
+  text-decoration: none;
+  z-index: 10;
+  box-shadow: 0 4px 14px rgba(168, 201, 0, 0.2);
+}
+
+.desktop-star-btn {
+  min-width: 140px;
+  height: 48px;
+  padding: 0 1.5rem;
+}
+
+.mobile-star-btn {
+  width: 100%;
+  height: 60px;
+}
+
+.enercon-star-btn .container-stars {
+  position: absolute;
+  z-index: 1; /* Above background color, below text */
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: opacity 0.5s ease, background-color 0.5s ease;
+  border-radius: 9999px;
+  opacity: 0;
+  background-color: transparent;
+  pointer-events: none;
+}
+
+.enercon-star-btn .btn-text {
+  position: relative;
+  z-index: 2; /* Ensure it stays above the stars */
+  color: white;
+  transition: text-shadow 0.3s;
+  pointer-events: none; /* Let button handle clicks */
+}
+
+/* Gradient border setup for hover */
+.enercon-star-btn::before {
+  content: "";
+  position: absolute;
+  inset: -2px; /* Pull outside to form border */
+  border-radius: 9999px;
+  background-image: linear-gradient(
+    137.48deg,
+    var(--color-enercon-green) 10%,
+    rgba(255,255,255,0.8) 45%,
+    var(--color-enercon-green) 67%,
+    rgba(255,255,255,0.8) 87%
+  );
+  background-size: 300% 300%;
+  animation: gradient_301 5s ease infinite;
+  z-index: 0; /* Below stars */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.enercon-star-btn .glow {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: -1; /* Behind the button itself */
+}
+
+.enercon-star-btn .circle {
+  width: 50%;
+  height: 100%;
+  filter: blur(1.5rem);
+  animation: pulse_3011 4s infinite;
+}
+
+.enercon-star-btn .circle:nth-of-type(1) {
+  background: rgba(168, 201, 0, 0.7); /* Lime */
+}
+
+.enercon-star-btn .circle:nth-of-type(2) {
+  background: rgba(6, 43, 85, 0.7); /* Navy */
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .enercon-star-btn:hover {
+    transform: scale(1.04);
+    background-color: var(--color-enercon-darker, #062B55);
+  }
+
+  .enercon-star-btn:hover::before {
+    opacity: 1; /* Show glowing gradient border */
+  }
+
+  .enercon-star-btn:hover .container-stars {
+    opacity: 1;
+    background-color: var(--color-enercon-darker, #062B55); /* Re-assert dark background for stars */
+  }
+
+  .enercon-star-btn:hover .glow {
+    opacity: 1;
+  }
+
+  .enercon-star-btn:hover .btn-text {
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.7);
+  }
+}
+
+.enercon-star-btn:active {
+  transform: scale(0.98);
+}
+
+.enercon-star-btn:active::before {
+  background-image: linear-gradient(var(--color-enercon-green), var(--color-enercon-green));
+  animation: none;
+}
+
+.enercon-star-btn .stars {
+  position: relative;
+  background: transparent;
+  width: 200rem;
+  height: 200rem;
+}
+
+.enercon-star-btn .stars::after {
+  content: "";
+  position: absolute;
+  top: -10rem;
+  left: -100rem;
+  width: 100%;
+  height: 100%;
+  animation: animStarRotate 90s linear infinite;
+  background-image: radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1%);
+  background-size: 50px 50px;
+}
+
+.enercon-star-btn .stars::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 170%;
+  height: 500%;
+  animation: animStar 60s linear infinite;
+  background-image: radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1%);
+  background-size: 50px 50px;
+  opacity: 0.5;
+}
+
+@keyframes animStar {
+  from { transform: translateY(0); }
+  to { transform: translateY(-135rem); }
+}
+
+@keyframes animStarRotate {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes gradient_301 {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse_3011 {
+  0% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.4);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+  100% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .enercon-star-btn .stars::after,
+  .enercon-star-btn .stars::before,
+  .enercon-star-btn::before,
+  .enercon-star-btn .circle {
+    animation: none !important;
+  }
+}

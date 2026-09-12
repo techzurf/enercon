@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import offGridImg from '../assets/images/regenerated_image_1789194237256.png';
@@ -7,27 +8,39 @@ import pureSineImg from '../assets/images/regenerated_image_1789195815422.png';
 const PRODUCTS = [
   {
     title: "Solar PV Modules",
+    desc: "High-efficiency solar modules designed for reliable and long-term renewable energy generation.",
+    benefit: "High-Efficiency Solar Generation",
     img: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=800",
   },
   {
     title: "Pure Sine Wave Inverters",
+    desc: "Reliable power conversion delivering stable and clean AC power for sensitive electrical and solar applications.",
+    benefit: "Stable & Clean Power",
     img: pureSineImg,
   },
   {
     title: "Off-Grid Hybrid Inverters",
+    desc: "Flexible energy management solutions designed to integrate solar generation, battery storage and backup power.",
+    benefit: "Flexible Energy Management",
     img: offGridImg,
   },
   {
     title: "Lithium Energy Storage Batteries",
+    desc: "Advanced lithium battery technology providing efficient energy storage and dependable backup power.",
+    benefit: "Advanced Energy Storage",
     img: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=800",
   },
   {
     title: "All-in-One Energy Storage",
+    desc: "Integrated energy storage solutions combining battery technology and power management for convenient energy control.",
+    benefit: "Integrated Energy Solution",
     img: allInOneImg,
   }
 ];
 
 export function Products() {
+  const [flippedIndex, setFlippedIndex] = useState<number | null>(null);
+
   return (
     <section id="products" className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -56,23 +69,48 @@ export function Products() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="shrink-0 w-[75vw] md:w-auto snap-center group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col"
+              className="shrink-0 w-[85vw] md:w-auto snap-center"
             >
-              <div className="aspect-square bg-slate-100 p-6 flex items-center justify-center overflow-hidden">
-                {/* Product images are often on white/transparent backgrounds. We use a subtle blend. */}
-                <img 
-                  src={product.img} 
-                  alt={product.title} 
-                  className="w-full h-full object-cover rounded-lg group-hover:scale-110 transition-transform duration-500 mix-blend-multiply"
-                />
-              </div>
-              <div className="p-6 text-center flex flex-col flex-grow items-center justify-between border-t border-slate-50">
-                <h3 className="font-bold text-enercon-darker mb-4 group-hover:text-enercon-green transition-colors text-balance">
-                  {product.title}
-                </h3>
-                <button className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-enercon-green group-hover:text-white transition-colors text-slate-400">
-                  <ArrowRight size={18} />
-                </button>
+              <div 
+                className={`product-flip-card ${flippedIndex === index ? 'is-flipped' : ''}`}
+                onClick={() => setFlippedIndex(flippedIndex === index ? null : index)}
+              >
+                <div className="product-flip-card-inner">
+                  {/* FRONT */}
+                  <div className="product-flip-card-front">
+                    <img
+                      src={product.img}
+                      alt={product.title}
+                      className="mix-blend-multiply"
+                    />
+                    <div className="product-card-content">
+                      <h3 className="text-balance">{product.title}</h3>
+                      <div className="product-arrow">
+                        <ArrowRight size={18} />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* BACK */}
+                  <div className="product-flip-card-back">
+                    <h3 className="text-balance">{product.title}</h3>
+                    <p>
+                      {product.desc}
+                    </p>
+                    <div className="product-benefit">
+                      {product.benefit}
+                    </div>
+                    <a
+                      href="#"
+                      className="product-details-btn"
+                      onClick={(e) => {
+                        e.stopPropagation(); // prevent flipping when clicking CTA
+                      }}
+                    >
+                      View Details <ArrowRight size={16} className="ml-1" />
+                    </a>
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}

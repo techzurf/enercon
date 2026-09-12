@@ -2,10 +2,10 @@ import { motion } from 'motion/react';
 import { Leaf, ShieldCheck, Users, Target } from 'lucide-react';
 
 const COLORS = [
-  { main: "#A8C900", glow: "rgba(168,201,0,0.35)" }, // Lime Green
-  { main: "#20A9E8", glow: "rgba(32,169,232,0.35)" }, // Cyan Blue
-  { main: "#16B978", glow: "rgba(22,185,120,0.35)" }, // Emerald Green
-  { main: "#F2C94C", glow: "rgba(242,201,76,0.35)" }, // Golden Yellow
+  { main: "#A8D500", bgTint: "rgba(168,213,0,0.1)", glow: "rgba(168,213,0,0.35)" }, // Lime Green
+  { main: "#20A9E0", bgTint: "rgba(32,169,224,0.1)", glow: "rgba(32,169,224,0.35)" }, // Cyan Blue
+  { main: "#18B978", bgTint: "rgba(24,185,120,0.1)", glow: "rgba(24,185,120,0.35)" }, // Emerald Green
+  { main: "#F5C542", bgTint: "rgba(245,197,66,0.1)", glow: "rgba(245,197,66,0.35)" }, // Golden Yellow
 ];
 
 const REASONS = [
@@ -61,20 +61,19 @@ export function WhyChooseUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group p-8 lg:p-10 rounded-[24px] bg-[#FAFAFA] border border-slate-200/80 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.03)] transition-all duration-400 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(11,49,93,0.12)] relative overflow-hidden flex flex-col sm:flex-row gap-6 lg:gap-8 items-start"
+                className="group p-8 lg:p-10 rounded-[24px] bg-[#FAFAFA] border border-slate-200/80 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.03)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(11,49,93,0.12)] relative overflow-hidden flex flex-col sm:flex-row gap-6 lg:gap-8 items-start"
                 style={{
                   '--card-accent': color.main,
                   '--card-glow': color.glow,
+                  '--card-bg-tint': color.bgTint,
                 } as React.CSSProperties}
               >
                 {/* Subtle Hover Highlight Border */}
-                <div className="absolute inset-0 border-2 border-transparent group-hover:border-[var(--card-accent)]/30 rounded-[24px] transition-colors duration-400 pointer-events-none z-20"></div>
+                <div className="absolute inset-0 border-2 border-transparent group-hover:border-[var(--card-accent)]/30 rounded-[24px] transition-colors duration-300 pointer-events-none z-20"></div>
 
                 {/* Icon Container */}
-                <div className="w-16 h-16 lg:w-20 lg:h-20 shrink-0 rounded-[18px] bg-white border border-slate-100 shadow-[0_4px_12px_-4px_rgba(0,0,0,0.05)] flex items-center justify-center transition-all duration-400 ease-out group-hover:-translate-y-1 group-hover:scale-[1.08] group-hover:shadow-[0_0_25px_var(--card-glow)] relative z-10 overflow-hidden group-hover:border-transparent">
-                  {/* Internal Icon Gradient Glow on Hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--card-accent)]/5 to-[var(--card-accent)]/15 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
-                  <reason.icon size={32} className="text-slate-600 transition-all duration-400 ease-out group-hover:text-[var(--card-accent)] group-hover:scale-110 relative z-10 w-8 h-8 lg:w-9 lg:h-9" strokeWidth={1.5} />
+                <div className="w-16 h-16 lg:w-20 lg:h-20 shrink-0 rounded-[18px] bg-[var(--card-bg-tint)] shadow-[0_4px_12px_-4px_rgba(0,0,0,0.05)] flex items-center justify-center transition-all duration-300 ease-out group-hover:scale-[1.08] group-hover:shadow-[0_0_25px_var(--card-glow)] relative z-10 overflow-hidden">
+                  <reason.icon size={32} className="text-[var(--card-accent)] transition-all duration-300 ease-out group-hover:drop-shadow-[0_0_8px_var(--card-glow)] relative z-10 w-8 h-8 lg:w-9 lg:h-9" strokeWidth={2} />
                 </div>
                 
                 <div className="relative z-10 pt-1 lg:pt-2">

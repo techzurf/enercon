@@ -2,11 +2,59 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Play, X } from 'lucide-react';
 
+function ChairmanCard() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <button
+      className={`chairman-card ${isOpen ? 'is-open' : ''}`}
+      onClick={() => setIsOpen(!isOpen)}
+      aria-label="Toggle Chairman Profile"
+      aria-expanded={isOpen}
+    >
+      <div className="chairman-border"></div>
+      <div className="chairman-trail"></div>
+
+      <div className="chairman-content-front">
+        <h3 className="text-3xl font-serif font-bold text-white tracking-wide mb-1">
+          ANIS RAJA
+        </h3>
+        <p className="text-white/80 font-medium mb-4 text-sm">
+          (Alias) Hashim Raja
+        </p>
+        <div className="w-12 h-px bg-enercon-green mb-4"></div>
+        <p className="text-enercon-green font-bold text-sm tracking-widest uppercase mb-1">
+          Chairman
+        </p>
+        <p className="text-slate-300 text-sm">
+          Enercon Group of Companies
+        </p>
+      </div>
+
+      <div className="chairman-content-back">
+        <p className="text-enercon-green font-bold text-xs tracking-[0.2em] uppercase mb-2">
+          Chairman
+        </p>
+        <h3 className="text-lg font-serif font-bold text-white mb-4">
+          Anis Raja (Alias) Hashim Raja
+        </h3>
+        <p className="text-slate-300 text-sm leading-relaxed max-w-sm">
+          A mechanical engineer with more than 20 years of professional experience in PV panel manufacturing and marketing, trading activities and overall business management, with expertise in strategy, business growth, market expansion and organizational development.
+        </p>
+      </div>
+
+      <span className="chairman-bottom-text">
+        {isOpen ? 'Click to return' : 'Click to view profile'}
+      </span>
+    </button>
+  );
+}
+
 export function About() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   return (
-    <section id="about" className="py-24 bg-slate-50 overflow-hidden">
+    <section id="about" className="pt-24 pb-8 lg:pb-0 bg-slate-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
@@ -69,7 +117,7 @@ export function About() {
                 covering consultation, procurement, project delivery, maintenance, and EPC services.
               </p>
               
-              <div className="mt-10 space-y-8">
+              <div className="mt-10 space-y-8 mb-8">
                 <div>
                   <h3 className="text-xl font-bold text-enercon-darker mb-3 flex items-center gap-3">
                     <span className="w-8 h-px bg-enercon-green"></span>
@@ -92,9 +140,19 @@ export function About() {
                   </p>
                 </div>
               </div>
+
+              {/* Chairman Card Repositioned Here */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="w-full mt-6"
+              >
+                <ChairmanCard />
+              </motion.div>
             </div>
           </motion.div>
-
         </div>
       </div>
 
