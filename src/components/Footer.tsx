@@ -10,7 +10,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <div className="flex flex-col mb-6">
               <span className="text-2xl font-bold leading-none tracking-tight text-white">ENERCON</span>
-              <span className="text-sm font-medium tracking-widest text-enercon-green">SOLAR</span>
+              <span className="text-sm font-medium tracking-widest text-enercon-green">GROUP</span>
             </div>
             <p className="text-sm text-slate-400 mb-6">
               Powering a Sustainable Tomorrow with innovative and reliable solar energy solutions.

@@ -2,10 +2,10 @@ import { motion } from 'motion/react';
 import { Leaf, ShieldCheck, Users, Target } from 'lucide-react';
 
 const COLORS = [
-  { main: "#A8C900", bg: "rgba(168,201,0,0.05)", hoverBg: "rgba(168,201,0,0.12)", shadow: "rgba(168,201,0,0.25)" }, // Lime Green
-  { main: "#20A9E8", bg: "rgba(32,169,232,0.05)", hoverBg: "rgba(32,169,232,0.12)", shadow: "rgba(32,169,232,0.25)" }, // Sky Blue
-  { main: "#16B978", bg: "rgba(22,185,120,0.05)", hoverBg: "rgba(22,185,120,0.12)", shadow: "rgba(22,185,120,0.25)" }, // Emerald Green
-  { main: "#F2C94C", bg: "rgba(242,201,76,0.05)", hoverBg: "rgba(242,201,76,0.12)", shadow: "rgba(242,201,76,0.25)" }, // Golden Yellow
+  { main: "#A8C900", glow: "rgba(168,201,0,0.35)" }, // Lime Green
+  { main: "#20A9E8", glow: "rgba(32,169,232,0.35)" }, // Cyan Blue
+  { main: "#16B978", glow: "rgba(22,185,120,0.35)" }, // Emerald Green
+  { main: "#F2C94C", glow: "rgba(242,201,76,0.35)" }, // Golden Yellow
 ];
 
 const REASONS = [
@@ -34,79 +34,56 @@ const REASONS = [
 export function WhyChooseUs() {
   return (
     <section className="py-24 bg-white relative overflow-hidden">
-      {/* Decorative background element */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-enercon-green-light/30 rounded-bl-[100px] -z-10 hidden lg:block"></div>
+      {/* Subtle decorative background element */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-50/50 rounded-bl-[100px] -z-10 hidden lg:block"></div>
       
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
-          <div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="text-enercon-green font-semibold tracking-widest text-sm uppercase mb-4 block">The Advantage</span>
-              <h2 className="text-4xl md:text-5xl font-serif font-bold text-enercon-darker mb-8">
-                Why Choose Enercon?
-              </h2>
-            </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <span className="text-enercon-green font-semibold tracking-widest text-sm uppercase mb-4 block">The Advantage</span>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-enercon-darker">
+            Why Choose Enercon?
+          </h2>
+        </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-8 lg:grid-cols-1 lg:space-y-8">
-              {REASONS.map((reason, index) => {
-                const color = COLORS[index % COLORS.length];
-                return (
-                  <motion.div 
-                    key={reason.title}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="group flex flex-col lg:flex-row gap-4 lg:gap-6 items-start p-6 rounded-2xl border transition-all duration-400 relative overflow-hidden bg-[var(--card-bg)] border-slate-100/50 hover:border-transparent md:hover:bg-[var(--card-hover-bg)] md:hover:shadow-[0_8px_30px_var(--card-shadow)] md:hover:-translate-y-1.5 active:scale-[0.98]"
-                    style={{
-                      '--card-color': color.main,
-                      '--card-bg': color.bg,
-                      '--card-hover-bg': color.hoverBg,
-                      '--card-shadow': color.shadow,
-                    } as React.CSSProperties}
-                  >
-                    <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-[0.85rem] flex items-center justify-center shrink-0 text-white bg-[var(--card-color)] shadow-md transition-transform duration-500 md:group-hover:scale-110 relative overflow-hidden">
-                      <reason.icon size={24} className="relative z-10 lg:w-7 lg:h-7" />
-                      {/* Shimmer effect inside icon container */}
-                      <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent md:group-hover:animate-[shimmer_1.5s_ease-in-out_infinite] z-0 skew-x-12"></div>
-                    </div>
-                    <div>
-                      <h3 className="text-lg lg:text-xl font-bold text-enercon-darker mb-2">{reason.title}</h3>
-                      <p className="text-slate-600 text-sm lg:text-base leading-relaxed">{reason.desc}</p>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
+          {REASONS.map((reason, index) => {
+            const color = COLORS[index % COLORS.length];
+            return (
+              <motion.div 
+                key={reason.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group p-8 lg:p-10 rounded-[24px] bg-[#FAFAFA] border border-slate-200/80 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.03)] transition-all duration-400 ease-out hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(11,49,93,0.12)] relative overflow-hidden flex flex-col sm:flex-row gap-6 lg:gap-8 items-start"
+                style={{
+                  '--card-accent': color.main,
+                  '--card-glow': color.glow,
+                } as React.CSSProperties}
+              >
+                {/* Subtle Hover Highlight Border */}
+                <div className="absolute inset-0 border-2 border-transparent group-hover:border-[var(--card-accent)]/30 rounded-[24px] transition-colors duration-400 pointer-events-none z-20"></div>
 
-          <motion.div
-             initial={{ opacity: 0, scale: 0.95 }}
-             whileInView={{ opacity: 1, scale: 1 }}
-             viewport={{ once: true }}
-             transition={{ duration: 0.8 }}
-             className="relative"
-          >
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&q=80&w=1200" 
-                alt="Wind turbines and solar panels" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="absolute -left-8 -bottom-8 bg-enercon-darker text-white p-8 rounded-2xl shadow-xl max-w-xs hidden md:block">
-              <p className="text-lg font-serif font-medium leading-relaxed italic">
-                "Empowering businesses with reliable, sustainable, and forward-thinking energy solutions."
-              </p>
-            </div>
-          </motion.div>
-
+                {/* Icon Container */}
+                <div className="w-16 h-16 lg:w-20 lg:h-20 shrink-0 rounded-[18px] bg-white border border-slate-100 shadow-[0_4px_12px_-4px_rgba(0,0,0,0.05)] flex items-center justify-center transition-all duration-400 ease-out group-hover:-translate-y-1 group-hover:scale-[1.08] group-hover:shadow-[0_0_25px_var(--card-glow)] relative z-10 overflow-hidden group-hover:border-transparent">
+                  {/* Internal Icon Gradient Glow on Hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--card-accent)]/5 to-[var(--card-accent)]/15 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                  <reason.icon size={32} className="text-slate-600 transition-all duration-400 ease-out group-hover:text-[var(--card-accent)] group-hover:scale-110 relative z-10 w-8 h-8 lg:w-9 lg:h-9" strokeWidth={1.5} />
+                </div>
+                
+                <div className="relative z-10 pt-1 lg:pt-2">
+                  <h3 className="text-xl lg:text-2xl font-bold text-enercon-darker mb-3">{reason.title}</h3>
+                  <p className="text-slate-600 leading-relaxed text-sm lg:text-base">{reason.desc}</p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

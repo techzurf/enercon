@@ -68,11 +68,11 @@ export function Preloader() {
           >
             <img
               src="https://res.cloudinary.com/dv16a8l1l/image/upload/v1789193241/enercon_header_logo_v4_qygdvi.png"
-              alt="Enercon Solar"
+              alt="Enercon Group"
               className="h-14 md:h-16 w-auto object-contain mb-6"
             />
             <h1 className="text-enercon-darker font-serif font-bold text-2xl tracking-[0.2em] uppercase">
-              Enercon Solar
+              Enercon Group
             </h1>
           </motion.div>
 

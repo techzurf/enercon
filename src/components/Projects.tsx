@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { ArrowRight, MapPin } from 'lucide-react';
-import dubaiAirportImg from '../assets/images/regenerated_image_1789198223274.png';
+import dubaiAirportImg from '../assets/images/regenerated_image_1789203958673.png';
 
 const PROJECTS = [
   {

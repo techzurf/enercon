@@ -24,7 +24,7 @@ export function About() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
                 src="https://res.cloudinary.com/dv16a8l1l/image/upload/v1789192114/about-solar_eisi5s.jpg" 
-                alt="Enercon Solar Project" 
+                alt="Enercon Group Project" 
                 className="w-full h-full object-cover"
               />
               

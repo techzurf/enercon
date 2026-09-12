@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 import { Building2 } from 'lucide-react';
 
 const COMPANIES = [
-  "Enercon Solar Energy Systems LLC",
+  "Enercon Group Energy Systems LLC",
   "Enercon Trading LLC",
   "Sahaal Power & Projects Pvt Ltd"
 ];

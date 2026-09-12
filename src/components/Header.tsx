@@ -36,7 +36,7 @@ export function Header() {
         <a href="#home" className="flex items-center group">
           <img 
             src="https://res.cloudinary.com/dv16a8l1l/image/upload/v1789193241/enercon_header_logo_v4_qygdvi.png"
-            alt="Enercon Solar"
+            alt="Enercon Group"
             className="h-10 md:h-12 w-auto object-contain group-hover:scale-105 transition-transform"
           />
         </a>
@@ -90,7 +90,7 @@ export function Header() {
                 <a href="#home" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
                   <img 
                     src="https://res.cloudinary.com/dv16a8l1l/image/upload/v1789193241/enercon_header_logo_v4_qygdvi.png"
-                    alt="Enercon Solar"
+                    alt="Enercon Group"
                     className="h-10 w-auto object-contain"
                   />
                 </a>
